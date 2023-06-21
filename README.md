@@ -3,6 +3,7 @@ To solve the problem about aubo_i5 ros package.
 
 ## urdf
 aubo_i5.urdf  (original)
+
 aubo_i5_new.urdf.xacro 
 (Solve problems in moveit_setup_assistant loading aubo_i5_robot.urdf.xacro, two issues)
 - add the <xacro_macro> definitation for robot link and joints
