@@ -4,7 +4,7 @@ To solve the problem about aubo_i5 ros package with robotiq FT300.
 ## Preconditions
 Ubuntu 20, ROS noetic
 
-aubo_robot and robotiq package are properl configured.
+aubo_robot and robotiq package are properly configured.
 
 ## urdf
 aubo_i5.urdf  (original)
