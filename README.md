@@ -40,14 +40,29 @@ planning_context_ft.launch
 ## Utilisation
 
 1. rviz
-   simulation, $roslaunch aubo_i5_moveit_config moveit_planning_execution_ft.launch robot_ip:=127.0.0.1
-   real robot, $roslaunch aubo_i5_moveit_config moveit_planning_execution_real_ft.launch robot_ip:=192.168.1.40 (robot ip)
+   simulation,
+
+   $ roslaunch aubo_i5_moveit_config moveit_planning_execution_ft.launch robot_ip:=127.0.0.1
+
+   real robot,
+
+   $ roslaunch aubo_i5_moveit_config moveit_planning_execution_real_ft.launch robot_ip:=192.168.1.40 (robot ip)
 2. gazebo
-   simulation, $roslaunch aubo_gazebo aubo_i5_gazebo_control.launch
+   
+   simulation,
+
+   $ roslaunch aubo_gazebo aubo_i5_gazebo_control.launch
 3. ft data
-   simulation, $rostopic echo /ft_sensor_topic
-   real robot, first run $ roslaunch robotiq_ft_sensor rq_test_sensor ( set to zero)
-              then $ rostopic echo /robotiq_ft_sensor or /robotiq_ft_wrench
+
+   simulation,
+   
+   $ rostopic echo /ft_sensor_topic
+   
+   real robot,
+   
+   first run $ roslaunch robotiq_ft_sensor rq_test_sensor ( set to zero)
+   
+   then $ rostopic echo /robotiq_ft_sensor or /robotiq_ft_wrench
 
 ## reference
 1. aubo_robot
