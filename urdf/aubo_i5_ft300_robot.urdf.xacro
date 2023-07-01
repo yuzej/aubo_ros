@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       name="aubo_i5_ft" >
+
+  <!-- common stuff -->
+  <!--xacro:include filename="$(find aubo_description)/urdf/common.gazebo.xacro" /-->
+
+  <!-- ur5 -->
+  <xacro:include filename="$(find aubo_description)/urdf/aubo_i5_new.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:aubo_i5 prefix="" joint_limited="false"/>
+  ke
+  <xacro:include filename="$(find robotiq_ft_sensor)/urdf/robotiq_ft300.urdf.xacro" />
+    <xacro:robotiq_ft300 parent="wrist3_Link" prefix="">
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
+    </xacro:robotiq_ft300>
+    
+      <!---->
+  <gazebo reference="ft300_sensor">
+    <material>Gazebo/Red</material>
+    <mu1 value="10.0"/>
+    <mu2 value="10.0"/>
+    <kp value="0.3" />
+    <kd value="1.0" />
+    <fdir1 value="1 0 0"/>
+    <gravity value="true"/>
+  </gazebo>
+  <!---->
+   <gazebo 
+      reference="measurment_joint">
+     <provideFeedback>true</provideFeedback>
+     <disableFixedJointLumping>true</disableFixedJointLumping>
+   </gazebo>
+ <!--  -->
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic</topicName>
+      <jointName>measurment_joint</jointName>
+    </plugin>
+  </gazebo>
+</robot>
+
