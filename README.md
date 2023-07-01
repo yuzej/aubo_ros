@@ -1,8 +1,9 @@
-# aubo_ros
+# aubo_ros with FT sensor
 To solve the problem about aubo_i5 ros package with robotiq FT300.
 
 ## Preconditions
 Ubuntu 20, ROS noetic
+
 aubo_robot and robotiq package are properl configured.
 
 ## urdf
